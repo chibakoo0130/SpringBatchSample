@@ -20,32 +20,32 @@ public class SampleJobConfig {
 	
 	public static final String JOB_NAME = "sampleJob";
 	
-	@Autowired
-	JobBuilderFactory jobBuilderFactory;
-	
-	@Autowired
-	StepBuilderFactory stepBuilderFactory;
-	
-	@Bean
-	public Job sampleJob() throws Exception {
-		return jobBuilderFactory.get(JOB_NAME).start(firstStep()).build();
-	}
-	
-	@Bean
-	public Step firstStep() {
-		return stepBuilderFactory.get("firstStep").tasklet(firstTasklet()).build();
-	}
-	
-	@Bean
-	public MethodInvokingTaskletAdapter firstTasklet() {
-		MethodInvokingTaskletAdapter adapter = new MethodInvokingTaskletAdapter();
-		adapter.setTargetObject(firstService());
-		adapter.setTargetMethod("execute");
-		return adapter;
-	}
-	
-	@Bean
-	public FirstService firstService() {
-		return new FirstServiceImpl();
-	}
+//	@Autowired
+//	JobBuilderFactory jobBuilderFactory;
+//	
+//	@Autowired
+//	StepBuilderFactory stepBuilderFactory;
+//	
+//	@Bean
+//	public Job sampleJob() throws Exception {
+//		return jobBuilderFactory.get(JOB_NAME).start(firstStep()).build();
+//	}
+//	
+//	@Bean
+//	public Step firstStep() {
+//		return stepBuilderFactory.get("firstStep").tasklet(firstTasklet()).build();
+//	}
+//	
+//	@Bean
+//	public MethodInvokingTaskletAdapter firstTasklet() {
+//		MethodInvokingTaskletAdapter adapter = new MethodInvokingTaskletAdapter();
+//		adapter.setTargetObject(firstService());
+//		adapter.setTargetMethod("execute");
+//		return adapter;
+//	}
+//	
+//	@Bean
+//	public FirstService firstService() {
+//		return new FirstServiceImpl();
+//	}
 }
